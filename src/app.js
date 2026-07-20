@@ -27,4 +27,15 @@ app.delete("/api/notes/:id", async (req, res) => {
     message: "Delete Post Successfully",
   });
 });
+app.patch('/api/notes/:id',async(req,res)=>{
+const {title,description}=req.body;
+const id=req.params.id;
+ await noteModel.findByIdAndUpdate(id,{title,description})
+  res.status(200).json({
+    "message":"Note Update Successfully.",
+     
+  })
+ 
+    
+})
 module.exports = app;
