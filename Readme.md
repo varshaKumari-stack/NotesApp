@@ -104,4 +104,3 @@ All endpoints are prefixed with `/api/notes`.
 ## npm Scripts
 
 - `npm run dev` → runs `npx nodemon server.js`
- 
