@@ -1,0 +1,206 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 2rem;
+}
+
+/* ---------- Form ---------- */
+
+.form-create {
+  width: 100%;
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.85rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: #374151;
+  color: white;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #bdbdbd;
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+}
+
+button {
+  padding: 0.85rem 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* ---------- Notes ---------- */
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ---------- Note Card ---------- */
+
+.note {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 15px;
+  padding: 1.5rem;
+  min-height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: all 0.35s ease;
+}
+
+.note:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: #f2eded;
+  color: #111827;
+  border-color: #ffffff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.note h1 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.note p {
+  color: #d1d5db;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  word-break: break-word;
+  text-transform: capitalize;
+  flex: 1;
+}
+
+.note:hover p {
+  color: #4b5563;
+}
+
+/* ---------- Buttons Inside Note ---------- */
+
+.btn {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn button {
+  flex: 1;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+ 
+
+.btn button:last-child {
+  background: #10b981;
+}
+
+.btn button:last-child:hover {
+  background: #059669;
+}
+ 
+
+.btn button:first-child {
+  background: #ef4444;
+}
+
+.btn button:first-child:hover {
+  background: #dc2626;
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .form-create {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input,
+  button {
+    width: 100%;
+  }
+
+  .notes {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    flex-direction: column;
+  }
+}

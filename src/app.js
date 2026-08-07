@@ -1,7 +1,9 @@
 const express = require("express");
+const cors = require("cors");
 const noteModel = require("./models/note.model");
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.post("/api/notes", async (req, res) => {
   const { title, description } = req.body;
   const noteData = await noteModel.create({
@@ -27,15 +29,12 @@ app.delete("/api/notes/:id", async (req, res) => {
     message: "Delete Post Successfully",
   });
 });
-app.patch('/api/notes/:id',async(req,res)=>{
-const {title,description}=req.body;
-const id=req.params.id;
- await noteModel.findByIdAndUpdate(id,{title,description})
+app.patch("/api/notes/:id", async (req, res) => {
+  const { title, description } = req.body;
+  const id = req.params.id;
+  await noteModel.findByIdAndUpdate(id, { title, description });
   res.status(200).json({
-    "message":"Note Update Successfully.",
-     
-  })
- 
-    
-})
+    message: "Note Update Successfully.",
+  });
+});
 module.exports = app;
